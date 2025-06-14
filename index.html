@@ -1,1 +1,30 @@
-oiia
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>現在の時刻</title>
+</head>
+<body>
+    <h1>現在の時刻</h1>
+    <p id="currentTime"></p>
+
+    <script>
+        // 現在の日時を取得
+        const now = new Date();
+
+        // 時刻表示用の文字列を作成
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0'); // 月は0から始まるため+1
+        const day = String(now.getDate()).padStart(2, '0');
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+
+        const timeString = `${year}年${month}月${day}日 ${hours}時${minutes}分${seconds}秒`;
+
+        // HTML要素に時刻を表示
+        document.getElementById('currentTime').textContent = timeString;
+    </script>
+</body>
+</html>
